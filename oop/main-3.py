@@ -1,13 +1,38 @@
-from class_static_methods_demo import Calculator
+class Calculator:
+    # Class attribute to indicate the type of calculations
+    calculation_type = "Arithmetic Operations"
 
-def main():
-    # Using the static method
-    sum_result = Calculator.add(10, 5)
-    print(f"The sum is: {sum_result}")
+    def __init__(self):
+        pass  # No instance attributes needed for this example
 
-    # Using the class method
-    product_result = Calculator.multiply(10, 5)
-    print(f"The product is: {product_result}")
+    @staticmethod
+    def add(a, b):
+        """Performs addition of two numbers."""
+        return a + b
 
+    @staticmethod
+    def subtract(a, b):
+        """Performs subtraction of two numbers."""
+        return a - b
+
+    @staticmethod
+    def multiply(a, b):
+        """Performs multiplication of two numbers."""
+        return a * b
+
+    @staticmethod
+    def divide(a, b):
+        """Performs division of two numbers."""
+        if b == 0:
+            raise ValueError("Cannot divide by zero.")
+        return a / b
+
+# Demo of class and static methods
 if __name__ == "__main__":
-    main()
+    print(f"Calculation Type: {Calculator.calculation_type}")
+
+    # Using static methods directly from the class
+    print(f"Addition: {Calculator.add(10, 5)}")
+    print(f"Subtraction: {Calculator.subtract(10, 5)}")
+    print(f"Multiplication: {Calculator.multiply(10, 5)}")
+    print(f"Division: {Calculator.divide(10, 5)}")
